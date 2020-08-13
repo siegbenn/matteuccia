@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matteuccia.Api", "Matteuccia.Api\Matteuccia.Api.csproj", "{6A1BCC2A-4E63-41CC-8D13-2C52A449931E}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matteuccia.Api", "Matteuccia.Api\Matteuccia.Api.csproj", "{6A1BCC2A-4E63-41CC-8D13-2C52A449931E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matteuccia.Contracts", "Matteuccia.Contracts\Matteuccia.Contracts.csproj", "{27414DDB-A512-4918-BCD2-B4CDBFE806F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matteuccia.Contracts", "Matteuccia.Contracts\Matteuccia.Contracts.csproj", "{27414DDB-A512-4918-BCD2-B4CDBFE806F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matteuccia.Workers", "Matteuccia.Workers\Matteuccia.Workers.csproj", "{C54BEB38-BC03-427C-B52A-8F90D9EA5638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matteuccia.Workers", "Matteuccia.Workers\Matteuccia.Workers.csproj", "{C54BEB38-BC03-427C-B52A-8F90D9EA5638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matteuccia.Components", "Matteuccia.Components\Matteuccia.Components.csproj", "{4F56E5F9-0752-40FD-8D8F-64534237E0D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matteuccia.Components", "Matteuccia.Components\Matteuccia.Components.csproj", "{4F56E5F9-0752-40FD-8D8F-64534237E0D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matteuccia.Worker", "Matteuccia.Worker\Matteuccia.Worker.csproj", "{4487A4F2-035F-403E-9C34-51BF39C78D11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,15 @@ Global
 		{4F56E5F9-0752-40FD-8D8F-64534237E0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F56E5F9-0752-40FD-8D8F-64534237E0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F56E5F9-0752-40FD-8D8F-64534237E0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4487A4F2-035F-403E-9C34-51BF39C78D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4487A4F2-035F-403E-9C34-51BF39C78D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4487A4F2-035F-403E-9C34-51BF39C78D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4487A4F2-035F-403E-9C34-51BF39C78D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A42E0CD-D7C4-40A3-BFA2-4F756AC97DA2}
 	EndGlobalSection
 EndGlobal
