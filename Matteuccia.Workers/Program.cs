@@ -2,12 +2,9 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using MassTransit;
-using MassTransit.Azure.ServiceBus.Core;
 using MassTransit.Definition;
+using MassTransit.RabbitMqTransport;
 using Matteuccia.Components;
-using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.DependencyCollector;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
@@ -19,9 +16,6 @@ namespace Matteuccia.Workers
 {
     class Program
     {
-        static TelemetryClient _telemetryClient;
-        static DependencyTrackingTelemetryModule _module;
-        
         static async Task Main(string[] args)
         {
             var isService = !(Debugger.IsAttached || ((IList) args).Contains("--console"));
@@ -44,22 +38,11 @@ namespace Matteuccia.Workers
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    _module = new DependencyTrackingTelemetryModule();
-                    _module.IncludeDiagnosticSourceActivities.Add("MassTransit");
-
-                    TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
-                    configuration.InstrumentationKey = "168f4189-bd3e-40e6-a453-0d9751b6ac23";
-                    configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
-
-                    _telemetryClient = new TelemetryClient(configuration);
-
-                    _module.Initialize(configuration);
-
                     services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
                     services.AddMassTransit(cfg =>
                     {
                         cfg.AddConsumer<SubmitOrderConsumer>();
-                        cfg.UsingAzureServiceBus(ConfigureBus);
+                        cfg.UsingRabbitMq(ConfigureBus);
                     });
 
                     services.AddMassTransitHostedService();
@@ -78,9 +61,8 @@ namespace Matteuccia.Workers
             Log.CloseAndFlush();
         }
 
-        static void ConfigureBus(IBusRegistrationContext context, IServiceBusBusFactoryConfigurator configurator)
+        private static void ConfigureBus(IBusRegistrationContext context, IRabbitMqBusFactoryConfigurator configurator)
         {
-            configurator.Host("Endpoint=sb://matteuccia.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=d+9gNw9G2H6uEDBeG+NkNYmcN5rJ0g9K9e0HtU0mdRk=");
             configurator.ConfigureEndpoints(context);
         }
     }

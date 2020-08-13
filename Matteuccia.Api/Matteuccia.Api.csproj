@@ -7,7 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="MassTransit.AspNetCore" Version="7.0.3-develop.2889" />
-      <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.0.3-develop.2889" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.4-develop.2906" />
       <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0-beta2" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
     </ItemGroup>

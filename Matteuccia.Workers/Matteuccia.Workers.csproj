@@ -7,8 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="MassTransit.AspNetCore" Version="7.0.3-develop.2889" />
-      <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.0.3-develop.2889" />
-      <PackageReference Include="Microsoft.ApplicationInsights.DependencyCollector" Version="2.15.0-beta2" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.4-develop.2906" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.7.20364.11" />
       <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.0-preview.7.20365.4" />
       <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10281" />
