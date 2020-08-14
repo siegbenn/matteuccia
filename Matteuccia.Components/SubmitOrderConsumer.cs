@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using MassTransit;
+﻿using MassTransit;
 using Matteuccia.Contracts;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Matteuccia.Components
 {
